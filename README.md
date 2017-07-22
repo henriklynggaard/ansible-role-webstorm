@@ -1,10 +1,10 @@
-WebStorm
+WebStorm (https://www.jetbrains.com/webstorm)
 =========
 
 This role installs WebStorm and configured plugins. It has been tested on Linux Mint 18 but should wokr on most 
 distributions. By default it installs WebStorm 2017.2 and no additional plugins
 
-By default webstorm is installed under the user's home directory and _become_ is not needed.
+By default WebStorm is installed under the user's home directory and _become_ is not needed.
 
 Requirements
 ------------
