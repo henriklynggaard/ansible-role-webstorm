@@ -1,4 +1,4 @@
-webstorm
+WebStorm
 =========
 
 This role installs WebStorm and configured plugins. It has been tested on Linux Mint 18 but should wokr on most 

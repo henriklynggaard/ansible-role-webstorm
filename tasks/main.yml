@@ -27,8 +27,30 @@
   unarchive:
     copy: no
     src: "{{ webstorm_download_url}}"
-    dest: "{{ webstorm_install_directory }}"
-    creates: "{{ webstorm_location }}/bin/webstorm.sh"
+    dest: "{{ webstorm_download_directory }}"
+    list_files: yes
+    creates: "{{ webstorm_location }}/bin/idea.sh"
+  register: unarchive_webstorm
+
+- name: Find WebStorm build number
+  set_fact:
+    webstorm_buildnumber: "{{ unarchive_webstorm.files[0].split('/')[0] }}"
+  when: unarchive_webstorm|changed
+  tags:
+    - skip_ansible_lint
+
+- debug:
+    msg: "Build number: {{ webstorm_buildnumber }}"
+  when: unarchive_webstorm|changed
+  tags:
+    - skip_ansible_lint
+
+- name: Move to final location
+  command: mv {{ webstorm_download_directory }}/{{ webstorm_buildnumber }} {{ webstorm_location }}
+  when: unarchive_webstorm|changed
+  tags:
+    - skip_ansible_lint
+
 
 - name: Install WebStorm Plugins
   unarchive:
