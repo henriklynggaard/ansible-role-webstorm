@@ -29,7 +29,7 @@
     src: "{{ webstorm_download_url}}"
     dest: "{{ webstorm_download_directory }}"
     list_files: yes
-    creates: "{{ webstorm_location }}/bin/idea.sh"
+    creates: "{{ webstorm_location }}/bin/webstorm.sh"
   register: unarchive_webstorm
 
 - name: Find WebStorm build number

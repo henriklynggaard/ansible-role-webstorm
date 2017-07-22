@@ -17,14 +17,14 @@ def test_desktop_file_exists(File):
 def test_desktop_file_contains_fullpath(File):
     f = File(desktop_file_location)
 
-    assert f.contains("/root/Tools/webstorm-2017.2/bin/webstorm.png")
+    assert f.contains("/root/Tools/webstorm-2017.2/bin/webstorm.svg")
     assert f.contains("/root/Tools/webstorm-2017.2/bin/webstorm.sh")
 
 
 def test_desktop_file_contains_right_name(File):
     f = File(desktop_file_location)
 
-    assert f.contains("WebStorm 2012.1")
+    assert f.contains("Name=WebStorm 2017.2")
 
 
 def test_start_file_exists(File):
