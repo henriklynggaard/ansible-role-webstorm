@@ -1,0 +1,14 @@
+---
+webstorm_version: 2017.2
+webstorm_download_mirror: https://download.jetbrains.com/webstorm/
+webstorm_plugin_download_mirror: "https://plugins.jetbrains.com/plugin/download?updateId="
+webstorm_plugins: []
+webstorm_download_directory: /tmp
+webstorm_install_directory: "{{ ansible_env['HOME'] }}/Tools"
+
+# calculated
+
+webstorm_install_file: "WebStorm-{{ webstorm_version }}.tar.gz"
+webstorm_download_url: "{{ webstorm_download_mirror }}{{ webstorm_install_file }}"
+webstorm_location: "{{ webstorm_install_directory }}/webstorm-{{ webstorm_version }}"
+webstorm_desktop_file_location: "{{ ansible_env['HOME'] }}/.local/share/applications/webstorm-{{ webstorm_version}}.desktop"
